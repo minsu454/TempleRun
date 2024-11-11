@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasePopupUI : MonoBehaviour
+public class BasePopupUI : BaseUI
 {
-    public const CacheType cache = CacheType.Normal;
-
     public virtual void Init<T>(T option) where T : PopupOption
     {
 

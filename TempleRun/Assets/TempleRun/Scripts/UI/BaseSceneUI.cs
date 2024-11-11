@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class BaseSceneUI : MonoBehaviour
+public class BaseSceneUI : BaseUI
 {
-    public const CacheType cache = CacheType.Once;
-
     public void Init()
     {
         
