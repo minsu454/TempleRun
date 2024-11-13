@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BaseSceneUI : BaseUI
 {
-    public void Init()
+    public virtual void Init()
     {
         
     }

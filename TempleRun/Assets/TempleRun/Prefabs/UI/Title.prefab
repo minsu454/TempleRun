@@ -121,8 +121,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4152763665312327497}
-        m_TargetAssemblyTypeName: InGame, Assembly-CSharp
+      - m_Target: {fileID: 8924494628640079723}
+        m_TargetAssemblyTypeName: Title, Assembly-CSharp
         m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
@@ -142,12 +142,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8167439621656887622}
-  - component: {fileID: 4152763665312327497}
+  - component: {fileID: 8924494628640079723}
   - component: {fileID: 7113949496668668747}
   - component: {fileID: 1041623615798686417}
   - component: {fileID: 4996847453999351475}
   m_Layer: 5
-  m_Name: InGame
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &4152763665312327497
+--- !u!114 &8924494628640079723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3893678638986257809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd6c2308504321440923f798a541eba8, type: 3}
+  m_Script: {fileID: 11500000, guid: 21a7a40087c9f074cb23719ccf375bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!223 &7113949496668668747
@@ -203,7 +203,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0

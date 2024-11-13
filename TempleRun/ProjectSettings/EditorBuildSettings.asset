@@ -4,6 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/TempleRun/Scenes/Loading.unity
+    guid: acaa24376f52d3d4a9d3fe3315fec7a7
+  - enabled: 1
+    path: Assets/TempleRun/Scenes/Title.unity
+    guid: d4f8eed4144eaec4a96118f48e36679c
+  - enabled: 1
+    path: Assets/TempleRun/Scenes/InGame.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: f147c8c889d8fcc44b04ea70def3f8d5, type: 2}
