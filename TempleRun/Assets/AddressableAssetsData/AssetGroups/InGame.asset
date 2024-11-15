@@ -17,29 +17,29 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: e80f52a30b3cc6c438d666ed151b9c71
   m_SerializeEntries:
-  - m_GUID: d22e65d5374c9e54dab06c9a1ea11e50
-    m_Address: UI/InGame
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6c0abea0322551e4fb322615dd2711a4
+  - m_GUID: ede3730c551f8ae468df4b7e94e4dfc6
     m_Address: Scene/InGame
     m_ReadOnly: 0
     m_SerializedLabels:
     - Scene
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 64b53ee16f22d9a4fb1eacbf4f85aef0
+  - m_GUID: 86f947f3a1bcdbf459589bbddc0e68f4
     m_Address: Pool/InGame
     m_ReadOnly: 0
     m_SerializedLabels:
     - ObjectPoolSO
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 74e1c47bfd0ebe14eaa770aa9ef6fd3c
+  - m_GUID: 8681e525510aef545b4382b62e37b54b
     m_Address: Pool/InGame
     m_ReadOnly: 0
     m_SerializedLabels:
     - ObjectPool
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46dd8593133e2cc449ba228c51c4633f
+    m_Address: UI/InGame
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8d53e569ee1c80d41b8faf3395611543, type: 2}

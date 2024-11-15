@@ -6,3 +6,7 @@
     * UIManager 업그레이드
 ### 2024-11-11
     * Addressable Asset 업그레이드 및 UIManager 접목
+### 2024-11-14
+    * SceneLoader 제작
+### 2024-11-15
+    * SoundManager 3D 생각해보기
