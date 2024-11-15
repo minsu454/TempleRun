@@ -1,55 +1,50 @@
 using Common.Assets;
+using Common.Path;
+using Common.SceneEx;
 using Cysharp.Threading.Tasks;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public sealed class UIManager : MonoBehaviour, IManager
+public sealed class UIManager : MonoBehaviour, IInit
 {
     private readonly List<BasePopupUI> showList = new List<BasePopupUI>();
 
     public void Init()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneLoader.Add(LoadPriorityType.UI, OnSceneLoaded);
     }
 
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private async UniTask OnSceneLoaded(Scene scene)
     {
-        showList.Clear();
-        CreateSceneUI(scene.name);
+        Clear();
+        await CreateSceneUI(scene.name);
     }
 
-    private async void CreateSceneUI(string name)
+    private async UniTask CreateSceneUI(string name)
     {
-        GameObject prefab = await AddressableAssets.InstantiateAsync($"UI/{name}.prefab");
+        GameObject prefab = await AddressableAssets.InstantiateAsync(AdressablePath.UIPath(name));
 
-        if (prefab == null)
+        if (!prefab.TryGetComponent(out BaseSceneUI sceneUI))
         {
-            Debug.LogError($"Is Not Prefab Addressable Asset Forder : {name}");
+            Debug.LogError($"GameObject Is Not BaseSceneUI Inheritance : {prefab}");
             return;
         }
-
-        BaseSceneUI sceneUI = prefab.GetComponent<BaseSceneUI>();
 
         sceneUI.Init();
     }
 
-    public async void CreatePopup<T>(PopupOption option = null) where T : BasePopupUI
+    public async UniTask CreatePopup<T>(PopupOption option = null) where T : BasePopupUI
     {
-        GameObject prefab = await AddressableAssets.InstantiateAsync($"UI/{typeof(T).Name}.prefab");
+        GameObject prefab = await AddressableAssets.InstantiateAsync(AdressablePath.UIPath(typeof(T).Name));
 
-        if (prefab == null)
+        if (!prefab.TryGetComponent(out T popupUI))
         {
-            Debug.LogError($"Is Not Prefab Addressable Asset Forder : {typeof(T).Name}");
+            Debug.LogError($"GameObject Is Not BaseSceneUI Inheritance : {prefab}");
             return;
         }
 
-        T popupUI = prefab.GetComponent<T>();
         showList.Add(popupUI);
-
         popupUI.Init(option);
     }
 
@@ -84,5 +79,10 @@ public sealed class UIManager : MonoBehaviour, IManager
 
         AddressableAssets.Release(popup.gameObject);
         Destroy(popup.gameObject);
+    }
+
+    private void Clear()
+    {
+        showList.Clear();
     }
 }

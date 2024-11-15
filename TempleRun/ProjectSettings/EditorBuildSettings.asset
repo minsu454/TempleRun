@@ -15,4 +15,4 @@ EditorBuildSettings:
     path: Assets/TempleRun/Scenes/InGame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: f147c8c889d8fcc44b04ea70def3f8d5, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: c7a55bb5e56e69a49a62365fa1f9d5b0, type: 2}

@@ -1,16 +1,13 @@
-using Common.Scene;
+using Common.SceneEx;
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Loading : BaseSceneUI
 {
     [SerializeField] private Image progressBar;
-
-    public override void Init()
-    {
-        base.Init();
-    }
 
     private void Start()
     {
@@ -19,6 +16,8 @@ public class Loading : BaseSceneUI
 
     IEnumerator LoadSceneProcess()
     {
+        progressBar.fillAmount = 0.0f;
+
         AsyncOperation op = SceneManagerEx.LoadNextSceneAsync();
 
         float timer = 0f;

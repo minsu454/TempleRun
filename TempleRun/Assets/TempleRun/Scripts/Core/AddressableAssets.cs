@@ -8,7 +8,6 @@ namespace Common.Assets
 {
     public static class AddressableAssets
     {
-
         /// <summary>
         /// 동기로 정보 가져오기(비권장)
         /// </summary>
@@ -32,7 +31,7 @@ namespace Common.Assets
         public static async UniTask<T> LoadDataAsync<T>(string path) where T : class
         {
             T t = await Addressables.LoadAssetAsync<T>(path);
-
+            
             return t;
         }
 
@@ -43,6 +42,23 @@ namespace Common.Assets
         {
             GameObject go = await Addressables.InstantiateAsync(path);
 
+            if (!go.TryGetComponent<IAddressable>(out var addressable))
+            {
+                Debug.LogError($"GameObject Is Not IAddressable Inheritance : {path}");
+                return null;
+            }
+
+            addressable.ReleaseEvent += Release;
+
+            return go;
+        }
+
+        /// <summary>
+        /// 비동기로 Instantiate 해주는 함수
+        /// </summary>
+        public static async UniTask<GameObject> InstantiateAsync(string path, Transform parent)
+        {
+            GameObject go = await Addressables.InstantiateAsync(path, parent);
             if (!go.TryGetComponent<IAddressable>(out var addressable))
             {
                 Debug.LogError($"GameObject Is Not IAddressable Inheritance : {path}");
